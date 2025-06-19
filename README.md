@@ -83,7 +83,7 @@ NOTE "gg_django" is the docker service name.
 
 ![alt text](doc_images/image-db-migrations.png)
 
-After running migrations
+After running migrations, it's good to go.
 
 ## Access the API
 
@@ -130,6 +130,10 @@ How to:
 
 It's possible to watch the bot accessing the IPMA website, for that, open the following url: http://localhost:7901/
 
+After opening the url, it's necessary to login, just enter the testing password: "secret".
+
+After that you can watch the Selenium script running (headless=False)
+
 ![alt text](doc_images/image-3-novnc.png)
 
 ## Notes
@@ -137,9 +141,14 @@ It's possible to watch the bot accessing the IPMA website, for that, open the fo
 - IPMA website only shows weather forecasts up to 9 days in the future.
 - If `use_cache=true`, the API will return cached results (15-minute cache window).
 - Check out the Swagger doc and the API description for more details about the inputs.
+- Project tested on Windows(+WSL) and Linux (Ubuntu), both OK with Docker...
+
+## References:
+
+- Docker config: https://www.docker.com/blog/how-to-dockerize-django-app/
+- Django docs.
 
 ## Questions
 
-In case of any doubt and question, feel free to reach out to me!
-
+In case of any doubt, problem during installation or question, feel free to reach out to me!
 Thanks!
