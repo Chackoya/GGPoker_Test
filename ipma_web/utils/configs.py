@@ -1,0 +1,35 @@
+# IPMA uses the following districts (obtained w/dev tools in network : 'locations.json')
+ALLOWED_DISTRICTS = [
+    "Aveiro",
+    "Beja",
+    "Braga",
+    "Bragança",
+    "Castelo Branco",
+    "Coimbra",
+    "Évora",
+    "Faro",
+    "Guarda",
+    "Leiria",
+    "Lisboa",
+    "Portalegre",
+    "Porto",
+    "Santarém",
+    "Setúbal",
+    "Viana do Castelo",
+    "Vila Real",
+    "Viseu",
+    "Madeira",
+    "Porto Santo",
+    "Santa Maria",
+    "São Miguel",
+    "Terceira",
+    "Graciosa",
+    "São Jorge",
+    "Pico",
+    "Faial",
+    "Flores",
+    "Corvo",
+]
+
+
+# USE_SELENIUM_FOR_LOCATIONS = True  # False

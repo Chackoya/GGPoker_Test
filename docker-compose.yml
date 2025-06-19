@@ -1,0 +1,66 @@
+services:
+  gg_selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: gg-selenium
+    shm_size: 2gb
+    ports:
+      - "4445:4444" #driver
+      - "7901:7900"  # noVNC (open in browser http://localhost:7901/ )
+    environment:
+      - SE_SCREEN_WIDTH=1366
+      - SE_SCREEN_HEIGHT=768
+      - SE_SCREEN_DEPTH=24
+
+  gg_db:
+      image: postgres:17
+      environment:
+        POSTGRES_DB: ${DATABASE_NAME}
+        POSTGRES_USER: ${DATABASE_USERNAME}
+        POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      env_file:
+        - .env
+
+  gg_django:
+    build: .
+    container_name: django-docker
+    ports:
+      - "8000:8000"
+      - "5678:5678"   # debugpy
+    depends_on:
+      - gg_db
+      - gg_selenium
+    environment:
+
+      DATABASE_ENGINE: ${DATABASE_ENGINE}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+
+    env_file:
+      - .env
+    volumes:
+      - .:/app  # syncs local folder with the container
+    
+    #? uncomment below for debug mode vscode
+    command: > #
+      python -m debugpy
+        --listen 0.0.0.0:5678
+        --wait-for-client
+        manage.py runserver 0.0.0.0:8000
+
+        
+  #gg_redis:
+
+
+volumes:
+  postgres_data:
+
+
+
+
