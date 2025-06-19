@@ -72,7 +72,7 @@ This will:
 
 ### 4- Run the django migrations
 
-Final step, run the basic Django db migrations by doing the following command:
+Final step, run the basic Django db migrations by doing the following command (can be in a new terminal):
 
 ```bash
 docker compose exec gg_django python manage.py migrate
