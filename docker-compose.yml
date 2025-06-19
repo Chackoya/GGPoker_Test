@@ -48,11 +48,11 @@ services:
       - .:/app  # syncs local folder with the container
     
     #? uncomment below for debug mode vscode
-    command: > #
-      python -m debugpy
-        --listen 0.0.0.0:5678
-        --wait-for-client
-        manage.py runserver 0.0.0.0:8000
+    #command: > #
+    #  python -m debugpy
+    #    --listen 0.0.0.0:5678
+    #    --wait-for-client
+    #    manage.py runserver 0.0.0.0:8000
 
         
   #gg_redis:
