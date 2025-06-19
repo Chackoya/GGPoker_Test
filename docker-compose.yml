@@ -26,7 +26,7 @@ services:
 
   gg_django:
     build: .
-    container_name: django-docker
+    container_name: gg_django
     ports:
       - "8000:8000"
       - "5678:5678"   # debugpy

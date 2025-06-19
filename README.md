@@ -32,6 +32,12 @@ NOTE: Docker & Docker compose are needed (tips should come by default with Docke
 git clone https://github.com/Chackoya/GGPoker_Test.git
 ```
 
+Then go into the project:
+
+```bash
+cd GGPoker_Test/
+```
+
 ---
 
 ### 2- Preliminary step .env
@@ -63,6 +69,21 @@ This will:
 - Start the Selenium (Chrome) container for webscraping
 
 ---
+
+### 4- Run the django migrations
+
+Final step, run the basic Django db migrations by doing the following command:
+
+```bash
+docker compose exec gg_django python manage.py migrate
+
+```
+
+NOTE "gg_django" is the docker service name.
+
+![alt text](doc_images/image-db-migrations.png)
+
+After running migrations
 
 ## Access the API
 
