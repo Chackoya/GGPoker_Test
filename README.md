@@ -11,7 +11,7 @@ Django REST API that scrapes weather forecast data from the IPMA website (https:
 ## Features
 
 - Weather forecast for any district and city in Portugal (with Selenium) for a given day (up to 10d)
-- REST API with support for query parameters (`district`, `city`, `day_index`, etc.)
+- REST API with support for query parameters (`district`, `city`, `index_day`, etc.)
 - Optinal: choice between Selenium and URL based scraping (using URL Fragments, faster option)
 - Optional caching (Django cache)
 - Swagger docs
